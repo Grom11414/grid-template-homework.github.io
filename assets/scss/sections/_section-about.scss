@@ -13,6 +13,18 @@
       grid-gap: $gap * 5;
       grid-template-columns: 1fr 271px;
     }
+    @include lg-md {
+      grid-gap: $gap * 2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      grid-gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      grid-gap: $gap;
+      grid-template-columns: 1fr;
+    }
   }
 
   &__content {
@@ -20,10 +32,12 @@
       @include lg-min {
         font-size: 1.125rem;
       }
+
       &:first-of-type {
         position: relative;
 
         margin-top: -$gap / 4;
+
         &::after {
           position: absolute;
           top: 0;
@@ -38,19 +52,29 @@
           @include lg-min {
             right: -50px;
           }
+          @include lg-md {
+            right: -$gap;
+          }
+          @include md-sm {
+            right: -$gap / 2;
+          }
+          @include sm {
+            display: none;
+          }
         }
       }
-      &__image {
-        display: grid;
-        align-items: center;
+    }
+  }
 
-        justify-items: center;
-        img {
-          max-width: 100%;
-          max-height: 480px;
-          margin-top: $gap;
-        }
-      }
+  &__image {
+    display: grid;
+    align-items: center;
+
+    justify-items: center;
+
+    img {
+      max-width: 100%;
+      max-height: 480px;
     }
   }
 }

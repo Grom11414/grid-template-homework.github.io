@@ -1,5 +1,5 @@
 .skills {
-  padding: 10px;
+  padding: $gap / 2;
 
   @include sm-min {
     padding: ($gap / 2) ($gap / 2) ($gap * 2);
@@ -12,7 +12,7 @@
   &__container {
     display: grid;
 
-    padding-bottom: 20px;
+    padding-bottom: $gap;
 
     @include lg-min {
       grid-gap: $gap / 2;
@@ -41,7 +41,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @include sm {
-      grid-gap: $gap / 2;
+      grid-gap: $gap ;
       grid-template-areas: "a1"
       "a2"
       "a3"
@@ -56,9 +56,7 @@
   }
 
   &__button {
-    display: flex;
-    justify-content: center;
-
+    @extend %btn-wrapper;
     @include sm-min {
       min-width: 350px;
     }
