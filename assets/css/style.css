@@ -463,11 +463,15 @@ template {
 /* sm */
 /* xs */
 /* xx */
-.header-menu__container, .header-content__container {
+.header-menu__container, .header-content__container, .about__container {
   max-width: 1340px;
   margin: auto;
   padding-right: 20px;
   padding-left: 20px;
+}
+
+.about h2 {
+  margin-top: 0;
 }
 
 * {
@@ -491,6 +495,16 @@ h1 {
   line-height: 1.2em;
 }
 
+h2 {
+  letter-spacing: 0.1em;
+  color: #2d3651;
+  line-height: 1.2em;
+}
+
+p {
+  color: #637588;
+}
+
 a {
   text-decoration: none;
   color: #ffffff;
@@ -509,7 +523,7 @@ a {
 
 .btn-accent {
   border-color: #2d3651;
-  background-color: rgba(68, 89, 110, 0.8);
+  background-color: rgba(45, 54, 81, 0.8);
 }
 
 .btn-accent:focus,
@@ -537,13 +551,13 @@ a {
 }
 
 .header-overlay {
+  opacity: 0.8;
+  background-color: #2d3651;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.8;
-  background-color: #2d3651;
 }
 
 .header-menu {
@@ -704,27 +718,27 @@ a {
 }
 
 .skill-item__overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 1;
   -webkit-transition: opacity 0.5s;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
   opacity: 0.8 !important;
   background-color: #2d3651 !important;
-}
-
-.skill-item__title {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.skill-item__title {
   z-index: 2;
   margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .skill-item__link {
@@ -748,11 +762,6 @@ a {
 }
 
 .skill-item__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   -o-transition: transform 0.5s;
@@ -760,6 +769,11 @@ a {
   transition: transform 0.5s, -webkit-transform 0.5s;
   background-position: 50% 50%;
   background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .skill-item:nth-of-type(1) {
@@ -812,6 +826,43 @@ a {
   color: #d66926;
 }
 
+.about {
+  letter-spacing: 0.055em;
+  background-color: #e5e5e5;
+}
+
+.about__container {
+  display: grid;
+}
+
+.about__content p:first-of-type {
+  position: relative;
+  margin-top: -5px;
+}
+
+.about__content p:first-of-type::after {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 200px;
+  content: "";
+  background-color: rgba(99, 117, 136, 0.1);
+}
+
+.about__content p__image {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.about__content p__image img {
+  max-width: 100%;
+  max-height: 480px;
+  margin-top: 20px;
+}
+
 @media (min-width: 576px) {
   .header-content__buttons .btn:first-of-type {
     margin-right: 20px;
@@ -840,12 +891,20 @@ a {
 }
 
 @media (min-width: 992px) {
+  .about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
   h1 {
     font-size: 3.75rem;
   }
+  h2 {
+    margin-bottom: 56px;
+    font-size: 2.5rem;
+  }
   .btn-accent,
   .btn {
-    min-width: 250px;
+    min-width: 350px;
     height: 60px;
     padding: 18px 20px;
     font-size: 1.125rem;
@@ -858,6 +917,16 @@ a {
     grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
     grid-template-columns: repeat(4, 1fr);
   }
+  .about__container {
+    grid-gap: 100px;
+    grid-template-columns: 1fr 271px;
+  }
+  .about__content p:first-of-type::after {
+    right: -50px;
+  }
+  .about__content p {
+    font-size: 1.125rem;
+  }
 }
 
 @media (max-width: 991.8px) {
@@ -867,12 +936,16 @@ a {
 }
 
 @media (max-width: 991.8px) and (min-width: 768px) {
+  .about {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   h1 {
     font-size: 2.5rem;
   }
   .btn-accent,
   .btn {
-    min-width: 200px;
+    min-width: 250px;
     height: 50px;
     padding: 14px 20px;
   }
@@ -884,6 +957,10 @@ a {
 }
 
 @media (max-width: 767.8px) {
+  .about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   h1 {
     font-size: 1.875rem;
   }
@@ -906,7 +983,7 @@ a {
 @media (max-width: 767.8px) and (min-width: 576px) {
   .btn-accent,
   .btn {
-    min-width: 170px;
+    min-width: 200px;
     height: 40px;
     padding: 10px 20px;
   }
@@ -925,13 +1002,13 @@ a {
     padding: 10px 20px;
   }
   .header-content__buttons {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .header-content__buttons .btn:first-of-type {
     margin-bottom: 20px;

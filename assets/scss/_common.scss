@@ -32,6 +32,24 @@ h1 {
   }
 }
 
+h2 {
+  letter-spacing: 0.1em;
+
+  color: $color-primary;
+
+  line-height: 1.2em;
+
+  @include lg-min {
+    margin-bottom: $gap *2.8;
+
+    font-size: 2.5rem;
+  }
+}
+
+p {
+  color: $color-gray;
+}
+
 a {
   text-decoration: none;
 
@@ -49,19 +67,19 @@ a {
   background-color: rgba($color-light, 0.1);
 
   @include lg-min {
-    min-width: 250px;
+    min-width: 350px;
     height: 60px;
     padding: 18px $gap;
 
     font-size: 1.125rem;
   }
   @include lg-md {
-    min-width: 200px;
+    min-width: 250px;
     height: 50px;
     padding: 14px $gap;
   }
   @include md-sm {
-    min-width: 170px;
+    min-width: 200px;
     height: 40px;
     padding: 10px $gap;
   }
@@ -74,7 +92,7 @@ a {
 
 .btn-accent {
   border-color: $color-primary;
-  background-color: rgba($color-gray-dark, 0.8);
+  background-color: rgba($color-primary, 0.8);
 }
 
 .btn-accent:focus,
