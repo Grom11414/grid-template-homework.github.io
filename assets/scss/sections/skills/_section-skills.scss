@@ -41,7 +41,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @include sm {
-      grid-gap: $gap ;
+      grid-gap: $gap;
       grid-template-areas: "a1"
       "a2"
       "a3"
@@ -56,7 +56,7 @@
   }
 
   &__button {
-    @extend %btn-wrapper;
+    @extend %btn-center;
     @include sm-min {
       min-width: 350px;
     }
