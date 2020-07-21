@@ -27,10 +27,6 @@
       @include lg-min {
         min-width: 250px;
 
-        @include sm {
-          margin-bottom: $gap;
-        }
-
         &:not(:last-of-type) {
           margin-right: $gap;
         }
@@ -64,8 +60,9 @@
         }
       }
       @include sm {
-        min-width: 170px;
+        max-width: 170px;
         height: 40px;
+        margin: 0 auto;
         padding-top: $gap / 2;
         padding-bottom: $gap / 2;
 
