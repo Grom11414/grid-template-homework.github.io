@@ -6,6 +6,7 @@
 }
 
 %section {
+  @extend %btn-min-size;
   @include lg-min {
     padding-top: $gap * 5;
     padding-bottom: $gap * 5;
@@ -58,5 +59,9 @@
   @include sm-min {
     display: flex;
     justify-content: center;
+  }
+
+  .btn-accent {
+    @extend %btn-min-size;
   }
 }

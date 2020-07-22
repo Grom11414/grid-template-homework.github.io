@@ -498,7 +498,6 @@ template {
 }
 
 html {
-  overflow-y: scroll;
   letter-spacing: 0.1em;
   color: #637588;
   font-family: "Roboto", sans-serif;
@@ -552,17 +551,13 @@ input:focus {
 
 .header {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
   min-height: 100vh;
   padding: 100px 0;
   color: #ffffff;
   background-color: #2d3651;
-  background-image: url(../img/img-header.png);
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -594,6 +589,8 @@ input:focus {
 }
 
 .header-logo {
+  -ms-flex-item-align: center;
+      align-self: center;
   letter-spacing: 0.22em;
   font-size: 1.5rem;
 }
@@ -717,7 +714,6 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: calc(33.3333vh - 13.3333px);
 }
 
 .skill-item__overlay {
@@ -1061,9 +1057,9 @@ input:focus {
 }
 
 .footer {
-  background-color: #2d3651;
-  text-align: center;
   padding: 50px 20px 70px;
+  text-align: center;
+  background-color: #2d3651;
 }
 
 .footer__social {
@@ -1078,13 +1074,13 @@ input:focus {
 }
 
 .footer__social::after {
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 75px / 2);
   width: 75px;
   height: 2px;
   content: "";
   background-color: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  bottom: -20px;
-  left: calc(50% - 75px / 2);
 }
 
 .footer__social a {
@@ -1116,7 +1112,7 @@ input:focus {
 }
 
 @media (min-width: 576px) {
-  .btn-accent {
+  .about, .posts, .header-content__buttons .btn-accent, .skills__button .btn-accent, .posts__button .btn-accent {
     min-width: 350px;
   }
   .header-content__buttons, .skills__button, .posts__button {
@@ -1132,6 +1128,12 @@ input:focus {
   }
   .skills__button {
     min-width: 350px;
+  }
+}
+
+@media (min-height: 691px) {
+  .skill-item {
+    min-height: calc(33.33vh - 20px * 0.66);
   }
 }
 
@@ -1315,8 +1317,14 @@ input:focus {
   }
 }
 
+@media (max-height: 690px) {
+  .skill-item {
+    min-height: calc(230px - 20px * 0.66);
+  }
+}
+
 @media (max-width: 575.8px) {
-  .btn-accent {
+  .about, .posts, .header-content__buttons .btn-accent, .skills__button .btn-accent, .posts__button .btn-accent {
     width: 100%;
   }
   h2 {

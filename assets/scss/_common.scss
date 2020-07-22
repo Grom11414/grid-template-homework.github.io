@@ -3,8 +3,6 @@
 }
 
 html {
-  overflow-y: scroll;
-
   letter-spacing: 0.1em;
 
   color: $color-gray;
@@ -102,5 +100,4 @@ input:focus {
   background-color: rgba($color-primary, 0.8);
 
   @extend %btn-common;
-  @extend %btn-min-size;
 }
